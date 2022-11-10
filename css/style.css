@@ -1,0 +1,19 @@
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    width: 500px;
+    height: 500px;
+}
+
+.cell {
+    border: 1px solid orange;
+    display: flex;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-content: center;
+}
+
+.disabled {
+    pointer-events: none;
+}
