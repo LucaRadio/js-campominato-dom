@@ -38,42 +38,70 @@ function cellsGenerator(dimension) {
 
         monoCell.dataset.cellNumber = `${i + 1}`;
 
-
         let cellNumber = parseInt(monoCell.dataset.cellNumber);
-        // if (bombPosition.includes(cellNumber)) {
-        //     monoCell.classList.add("mark")
-        // }
+        if (bombPosition.includes(cellNumber)) {
+            monoCell.classList.add("bookmark")
+        }
+
         monoCell.addEventListener("click", function () {
-            this.classList.add("disabled")
+            this.classList.add("disabled");
             if (bombPosition.includes(cellNumber)) {
-                this.classList.add("bg-danger")
-                alert("Hai Trovato una Bomba. Game over!")
                 gridContainerEl.classList.add("disabled")
-            } else {
+                this.classList.add("bg-danger")
+                for (let j = 0; j < dimension; j++) {
+                    let cellsCheck = document.querySelector(`.grid-container :nth-child(${j + 1})`);
+                    console.log(cellsCheck);
+                    if (cellsCheck.classList.contains("bookmark")) {
+                        cellsCheck.classList.replace("bookmark", "bg-danger")
+                    }
+                }
+                alert("Hai Perso!")
+            }
+            else {
                 this.classList.add("bg-primary")
                 count++;
                 if (count === dimension - 16) {
                     alert("Hai Vinto! Complimenti!")
                 }
             }
-        });
 
-        monoCell.removeEventListener("click", function () { });
+
+        });
         gridContainerEl.append(monoCell);
     }
+
+
+
 
 
 }
 
 function bombGenerator(dimension) {
-    let bombList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    let bombList = [];
 
-    // while (bombList.length < 16) {
-    //     const bombPosition = randomNumberGenerator(1, dimension);
+    while (bombList.length < 16) {
+        const bombPosition = randomNumberGenerator(1, dimension);
 
-    //     if (!bombList.includes(bombPosition)) {
-    //         bombList.push(bombPosition)
-    //     }
-    // }
+        if (!bombList.includes(bombPosition)) {
+            bombList.push(bombPosition)
+        }
+    }
     return bombList;
 }
+
+
+// function click(bombPosition, cellNumber) {
+//     if (bombPosition.includes(cellNumber)) {
+//         alert("Hai Trovato una Bomba. Game over!")
+//         gridContainerEl.classList.add("disabled")
+
+//         return true;
+//     } else {
+//         monoCell.classList.add("bg-primary")
+//         count++;
+//         if (count === dimension - 16) {
+//             alert("Hai Vinto! Complimenti!")
+//         }
+//     }
+
+// }
