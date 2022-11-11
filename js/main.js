@@ -89,19 +89,3 @@ function bombGenerator(dimension) {
     return bombList;
 }
 
-
-// function click(bombPosition, cellNumber) {
-//     if (bombPosition.includes(cellNumber)) {
-//         alert("Hai Trovato una Bomba. Game over!")
-//         gridContainerEl.classList.add("disabled")
-
-//         return true;
-//     } else {
-//         monoCell.classList.add("bg-primary")
-//         count++;
-//         if (count === dimension - 16) {
-//             alert("Hai Vinto! Complimenti!")
-//         }
-//     }
-
-// }
