@@ -4,7 +4,7 @@ const selectEl = document.querySelector("[name='rowCells']");
 
 const gridContainerEl = document.querySelector(".grid-container");
 
-let count = 1;
+let count = 0;
 
 function randomNumberGenerator(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -77,15 +77,15 @@ function cellsGenerator(dimension) {
 }
 
 function bombGenerator(dimension) {
-    let bombList = [];
+    let bombList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
-    while (bombList.length < 16) {
-        const bombPosition = randomNumberGenerator(1, dimension);
+    // while (bombList.length < 16) {
+    //     const bombPosition = randomNumberGenerator(1, dimension);
 
-        if (!bombList.includes(bombPosition)) {
-            bombList.push(bombPosition)
-        }
-    }
+    //     if (!bombList.includes(bombPosition)) {
+    //         bombList.push(bombPosition)
+    //     }
+    // }
     return bombList;
 }
 
