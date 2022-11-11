@@ -3,12 +3,14 @@ const playBtn = document.querySelector(".btn");
 const selectEl = document.querySelector("[name='rowCells']");
 
 const gridContainerEl = document.querySelector(".grid-container");
+const score = document.querySelector(".message")
 
 let count = 0;
 
 function randomNumberGenerator(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 
 
 playBtn.addEventListener("click", function () {
@@ -63,9 +65,9 @@ function cellsGenerator(dimension) {
                 if (count === dimension - 16) {
                     alert("Hai Vinto! Complimenti!")
                 }
+                score.innerHTML = `Il tuo punteggio e' ${count}`
+
             }
-
-
         });
         gridContainerEl.append(monoCell);
     }
