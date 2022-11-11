@@ -77,7 +77,7 @@ function cellsGenerator(dimension) {
 }
 
 function bombGenerator(dimension) {
-    let bombList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    let bombList = [];
 
     while (bombList.length < 16) {
         const bombPosition = randomNumberGenerator(1, dimension);
