@@ -79,13 +79,13 @@ function cellsGenerator(dimension) {
 function bombGenerator(dimension) {
     let bombList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
-    // while (bombList.length < 16) {
-    //     const bombPosition = randomNumberGenerator(1, dimension);
+    while (bombList.length < 16) {
+        const bombPosition = randomNumberGenerator(1, dimension);
 
-    //     if (!bombList.includes(bombPosition)) {
-    //         bombList.push(bombPosition)
-    //     }
-    // }
+        if (!bombList.includes(bombPosition)) {
+            bombList.push(bombPosition)
+        }
+    }
     return bombList;
 }
 
