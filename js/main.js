@@ -5,7 +5,7 @@ const selectEl = document.querySelector("[name='rowCells']");
 const gridContainerEl = document.querySelector(".grid-container");
 const score = document.querySelector(".message")
 
-let count = 0;
+let count;
 
 function randomNumberGenerator(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -14,8 +14,10 @@ function randomNumberGenerator(min, max) {
 
 
 playBtn.addEventListener("click", function () {
-    gridContainerEl.innerHTML = ""
-    gridContainerEl.classList.remove("disabled")
+    count = 0;
+    score.innerHTML = "";
+    gridContainerEl.innerHTML = "";
+    gridContainerEl.classList.remove("disabled");
     let dimension;
     const option = parseInt(selectEl.value);
     if (option === 10) {
